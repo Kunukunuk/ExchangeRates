@@ -12,18 +12,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var basePickerView: UIPickerView!
     @IBOutlet weak var baseLabel: UILabel!
+    var basePickerLabels = [String]()
+    var basePickerData: [String: Double] = [:]
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        getAPIData()
         
         basePickerView.delegate = self
         basePickerView.dataSource = self
         
-        getAPIData()
+        
     }
 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return basePickerLabels.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return basePickerLabels[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        baseLabel.text = basePickerLabels[row]
+    }
+    
     func getAPIData() {
         
         let url = URL(string: "https://api.exchangeratesapi.io/latest?base=USD")
@@ -37,7 +56,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             let dataDictionary = try! JSONSerialization.jsonObject(with: dataJSON, options: []) as! [String: Any]
             
-            print(dataDictionary)
+            let rates = dataDictionary["rates"] as! [String: Double]
+            
+            print("data: \(dataDictionary)")
+            for (key, value) in rates {
+                print(key)
+            
+                self.basePickerLabels.append(key)
+                self.basePickerData[key] = value
+                
+            }
+            DispatchQueue.main.sync {
+                self.basePickerView.reloadAllComponents()
+            }
+            
         }
         task.resume()
     }
