@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var basePickerLabels = [String]()
     var basePickerData: [String: Double] = [:]
+    var pickedCurrency: String = ""
     
     
     override func viewDidLoad() {
@@ -44,10 +45,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        pickedCurrency = basePickerLabels[row]
         
     }
     
     @IBAction func convertValue(_ sender: UIButton) {
+        guard let value = Double(baseValue.text!) else {
+            return
+        }
+        
+        if pickedCurrency != "" {
+            let double = basePickerData[pickedCurrency]
+            let convert = double! * value
+            convertedValue.text = "\(convert)"
+        } else {
+            print("bye")
+        }
+        
     }
     
     
