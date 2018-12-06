@@ -11,11 +11,14 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var basePickerView: UIPickerView!
-    @IBOutlet weak var baseLabel: UILabel!
+    
+    @IBOutlet weak var baseValue: UITextField!
+    @IBOutlet weak var convertedValue: UITextField!
+    
     var basePickerLabels = [String]()
     var basePickerData: [String: Double] = [:]
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -40,8 +43,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        baseLabel.text = basePickerLabels[row]
+        
+        
     }
+    
+    @IBAction func convertValue(_ sender: UIButton) {
+    }
+    
     
     func getAPIData() {
         
