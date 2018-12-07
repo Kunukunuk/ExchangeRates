@@ -32,7 +32,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhM-3l-aiS">
                                         <rect key="frame" x="133" y="0.0" width="128" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Convert"/>
                                         <connections>
                                             <action selector="convertValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="al0-4U-2bx"/>
                                         </connections>
