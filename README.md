@@ -1,4 +1,7 @@
-# ExchangeRates an app that uses https://exchangeratesapi.io api to get exhcange rates to exchange USD to other currencies.
+# *ExchangeRates*
+
+**ExchangeRates** an app that uses https://exchangeratesapi.io api to get exhcange rates to exchange USD to other currencies.
+
 
 ## Video Walkthrough
 
