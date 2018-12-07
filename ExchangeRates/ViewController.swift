@@ -80,7 +80,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             let rates = dataDictionary["rates"] as! [String: Double]
             
-            print("data: \(dataDictionary)")
             for (key, value) in rates {
                 print(key)
             
