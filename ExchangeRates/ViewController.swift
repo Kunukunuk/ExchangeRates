@@ -57,7 +57,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if pickedCurrency != "" {
             let double = basePickerData[pickedCurrency]
             let convert = double! * value
-            convertedValue.text = "\(convert)"
+            let stringOutput = String(format: "%.2f", convert)
+            convertedValue.text = stringOutput
         } else {
             print("bye")
         }
