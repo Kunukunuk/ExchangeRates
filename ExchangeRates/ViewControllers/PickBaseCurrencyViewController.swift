@@ -12,7 +12,7 @@ class PickBaseCurrencyViewController: UIViewController {
     
     @IBOutlet weak var baseCurrencyPicker: UIPickerView!
     let baseCurrencyArray = ["AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK","EUR", "GBP", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "USD", "ZAR"]
-    var pickedCurrency: String?
+    var pickedCurrency = "AUD"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -23,11 +23,11 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        getAPIData()
         
         basePickerView.delegate = self
         basePickerView.dataSource = self
         
+        getAPIData(of: baseCurrencySymbol!)
         
     }
 
@@ -71,9 +71,9 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
-    func getAPIData() {
+    func getAPIData(of symbol: String) {
         
-        let url = URL(string: "https://api.exchangeratesapi.io/latest?base=USD")
+        let url = URL(string: "https://api.exchangeratesapi.io/latest?base=\(symbol)")
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
