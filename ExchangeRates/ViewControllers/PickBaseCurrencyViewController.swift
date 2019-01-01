@@ -11,10 +11,13 @@ import UIKit
 class PickBaseCurrencyViewController: UIViewController {
     
     @IBOutlet weak var baseCurrencyPicker: UIPickerView!
+    var baseCurrencyArray = ["EUR"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        baseCurrencyPicker.delegate = self
+        baseCurrencyPicker.dataSource = self
         // Do any additional setup after loading the view.
         getBaseCurrencySymbols()
     }
@@ -46,4 +49,17 @@ class PickBaseCurrencyViewController: UIViewController {
         task.resume()
     }
 
+}
+
+extension PickBaseCurrencyViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return baseCurrencyArray.count
+    }
+    
+    
 }
