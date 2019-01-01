@@ -13,6 +13,7 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var basePickerView: UIPickerView!
     @IBOutlet weak var baseValue: UITextField!
     @IBOutlet weak var convertedValue: UITextField!
+    @IBOutlet weak var baseCurrencyLabel: UILabel!
     
     var basePickerLabels = [String]()
     var basePickerData: [String: Double] = [:]
@@ -26,6 +27,7 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         basePickerView.delegate = self
         basePickerView.dataSource = self
+        baseCurrencyLabel.text = "\(baseCurrencySymbol!) TO"
         
         getAPIData(of: baseCurrencySymbol!)
         
