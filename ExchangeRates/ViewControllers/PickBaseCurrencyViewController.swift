@@ -11,7 +11,7 @@ import UIKit
 class PickBaseCurrencyViewController: UIViewController {
     
     @IBOutlet weak var baseCurrencyPicker: UIPickerView!
-    var baseCurrencyArray = ["EUR"]
+    let baseCurrencyArray = ["AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK","EUR", "GBP", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "USD", "ZAR"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +36,10 @@ class PickBaseCurrencyViewController: UIViewController {
             
             let dataDictionary = try! JSONSerialization.jsonObject(with: dataJSON, options: []) as! [String: Any]
             
-            print(dataDictionary)
-            
             let baseCurrency = dataDictionary["rates"] as! [String: Double]
             
             print(baseCurrency)
+            print(self.baseCurrencyArray.count)
 //            DispatchQueue.main.sync {
 //                self.basePickerView.reloadAllComponents()
 //            }
@@ -48,6 +47,10 @@ class PickBaseCurrencyViewController: UIViewController {
         }
         task.resume()
     }
+    
+    @IBAction func selectBaseCurrency(_ sender: UIButton) {
+    }
+    
 
 }
 
@@ -61,5 +64,7 @@ extension PickBaseCurrencyViewController: UIPickerViewDelegate, UIPickerViewData
         return baseCurrencyArray.count
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return baseCurrencyArray[row]
+    }
 }

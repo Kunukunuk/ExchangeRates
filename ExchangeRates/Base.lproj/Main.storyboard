@@ -25,16 +25,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-tS-CLt">
-                                <rect key="frame" x="10" y="104" width="414" height="738"/>
+                                <rect key="frame" x="10" y="104" width="414" height="216"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jP-X4-8AS">
+                                <rect key="frame" x="10" y="340" width="394" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Select Currency"/>
+                                <connections>
+                                    <action selector="selectBaseCurrency:" destination="SeR-Fu-EaX" eventType="touchUpInside" id="JbW-xh-LwB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ra1-tS-CLt" firstAttribute="trailing" secondItem="lP4-T0-qpt" secondAttribute="trailing" constant="10" id="4SU-Lz-ndI"/>
                             <constraint firstItem="Iy9-UI-eG7" firstAttribute="top" secondItem="lP4-T0-qpt" secondAttribute="top" constant="10" id="BQ1-iy-mqf"/>
+                            <constraint firstItem="lP4-T0-qpt" firstAttribute="trailing" secondItem="6jP-X4-8AS" secondAttribute="trailing" constant="10" id="FEi-8E-XMu"/>
                             <constraint firstItem="Ra1-tS-CLt" firstAttribute="top" secondItem="Iy9-UI-eG7" secondAttribute="bottom" constant="20" id="Lvp-uH-bhx"/>
                             <constraint firstItem="Ra1-tS-CLt" firstAttribute="leading" secondItem="lP4-T0-qpt" secondAttribute="leading" constant="10" id="MTW-Sv-L4q"/>
-                            <constraint firstItem="lP4-T0-qpt" firstAttribute="bottom" secondItem="Ra1-tS-CLt" secondAttribute="bottom" constant="20" id="Qqx-2w-iIu"/>
+                            <constraint firstItem="6jP-X4-8AS" firstAttribute="top" secondItem="Ra1-tS-CLt" secondAttribute="bottom" constant="20" id="Mju-pp-j3O"/>
+                            <constraint firstItem="6jP-X4-8AS" firstAttribute="leading" secondItem="lP4-T0-qpt" secondAttribute="leading" constant="10" id="Nax-qX-GFC"/>
                             <constraint firstItem="lP4-T0-qpt" firstAttribute="trailing" secondItem="Iy9-UI-eG7" secondAttribute="trailing" constant="10" id="lph-P3-mZq"/>
                             <constraint firstItem="Iy9-UI-eG7" firstAttribute="leading" secondItem="lP4-T0-qpt" secondAttribute="leading" constant="10" id="qKc-Xv-kPG"/>
                         </constraints>
