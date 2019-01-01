@@ -9,6 +9,8 @@
 import UIKit
 
 class PickBaseCurrencyViewController: UIViewController {
+    
+    @IBOutlet weak var baseCurrencyPicker: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,8 @@ class PickBaseCurrencyViewController: UIViewController {
             }
             
             let dataDictionary = try! JSONSerialization.jsonObject(with: dataJSON, options: []) as! [String: Any]
+            
+            print(dataDictionary)
             
             let baseCurrency = dataDictionary["rates"] as! [String: Double]
             

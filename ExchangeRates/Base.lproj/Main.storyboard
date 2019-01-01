@@ -40,6 +40,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lP4-T0-qpt"/>
                     </view>
+                    <connections>
+                        <outlet property="baseCurrencyPicker" destination="Ra1-tS-CLt" id="ktH-sU-r5h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Beg-rv-Co5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
