@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DC04FED21DAEE3900107B7E /* PickBaseCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC04FEC21DAEE3900107B7E /* PickBaseCurrencyViewController.swift */; };
 		0DC6F08821B77B71002DF085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6F08721B77B71002DF085 /* AppDelegate.swift */; };
-		0DC6F08A21B77B71002DF085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6F08921B77B71002DF085 /* ViewController.swift */; };
+		0DC6F08A21B77B71002DF085 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC6F08921B77B71002DF085 /* ExchangeRateViewController.swift */; };
 		0DC6F08D21B77B71002DF085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6F08B21B77B71002DF085 /* Main.storyboard */; };
 		0DC6F08F21B77B72002DF085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6F08E21B77B72002DF085 /* Assets.xcassets */; };
 		0DC6F09221B77B72002DF085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC6F09021B77B72002DF085 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		0DC04FEC21DAEE3900107B7E /* PickBaseCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickBaseCurrencyViewController.swift; sourceTree = "<group>"; };
 		0DC6F08421B77B71002DF085 /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC6F08721B77B71002DF085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DC6F08921B77B71002DF085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DC6F08921B77B71002DF085 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
 		0DC6F08C21B77B71002DF085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DC6F08E21B77B72002DF085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DC6F09121B77B72002DF085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		0DC04FEE21DAF0CD00107B7E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0DC6F08921B77B71002DF085 /* ViewController.swift */,
+				0DC6F08921B77B71002DF085 /* ExchangeRateViewController.swift */,
 				0DC04FEC21DAEE3900107B7E /* PickBaseCurrencyViewController.swift */,
 			);
 			path = ViewControllers;
@@ -146,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DC6F08A21B77B71002DF085 /* ViewController.swift in Sources */,
+				0DC6F08A21B77B71002DF085 /* ExchangeRateViewController.swift in Sources */,
 				0DC04FED21DAEE3900107B7E /* PickBaseCurrencyViewController.swift in Sources */,
 				0DC6F08821B77B71002DF085 /* AppDelegate.swift in Sources */,
 			);
