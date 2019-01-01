@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SeR-Fu-EaX">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Pick Base Currency View Controller-->
+        <scene sceneID="L7b-qH-UBM">
+            <objects>
+                <viewController id="SeR-Fu-EaX" customClass="PickBaseCurrencyViewController" customModule="ExchangeRates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ACr-WG-J08">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Base Currency" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy9-UI-eG7">
+                                <rect key="frame" x="10" y="54" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-tS-CLt">
+                                <rect key="frame" x="10" y="104" width="414" height="738"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ra1-tS-CLt" firstAttribute="trailing" secondItem="lP4-T0-qpt" secondAttribute="trailing" constant="10" id="4SU-Lz-ndI"/>
+                            <constraint firstItem="Iy9-UI-eG7" firstAttribute="top" secondItem="lP4-T0-qpt" secondAttribute="top" constant="10" id="BQ1-iy-mqf"/>
+                            <constraint firstItem="Ra1-tS-CLt" firstAttribute="top" secondItem="Iy9-UI-eG7" secondAttribute="bottom" constant="20" id="Lvp-uH-bhx"/>
+                            <constraint firstItem="Ra1-tS-CLt" firstAttribute="leading" secondItem="lP4-T0-qpt" secondAttribute="leading" constant="10" id="MTW-Sv-L4q"/>
+                            <constraint firstItem="lP4-T0-qpt" firstAttribute="bottom" secondItem="Ra1-tS-CLt" secondAttribute="bottom" constant="20" id="Qqx-2w-iIu"/>
+                            <constraint firstItem="lP4-T0-qpt" firstAttribute="trailing" secondItem="Iy9-UI-eG7" secondAttribute="trailing" constant="10" id="lph-P3-mZq"/>
+                            <constraint firstItem="Iy9-UI-eG7" firstAttribute="leading" secondItem="lP4-T0-qpt" secondAttribute="leading" constant="10" id="qKc-Xv-kPG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lP4-T0-qpt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Beg-rv-Co5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-786" y="109"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
