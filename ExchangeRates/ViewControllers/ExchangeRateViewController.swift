@@ -29,6 +29,9 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
         basePickerView.dataSource = self
         baseCurrencyLabel.text = "\(baseCurrencySymbol!) TO"
         
+        baseValue.delegate = self
+        
+//        baseValue.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         getAPIData(of: baseCurrencySymbol!)
         
     }
@@ -52,19 +55,36 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func convertValue(_ sender: UIButton) {
-        guard let value = Double(baseValue.text!) else {
-            return
+        
+        if baseValue.text == "" {
+            createAlert()
+        } else {
+            let symbolWithValue = baseValue.text?.split(separator: " ")
+            
+            if symbolWithValue?.count == 2 {
+                guard let value = Double(symbolWithValue![1]) else {
+                    return
+                }
+                
+                performExchange(with: value)
+            } else {
+                createAlert()
+            }
         }
+        
+    }
+    
+    func performExchange(with value: Double) {
         
         if pickedCurrency != "" {
             let double = basePickerData[pickedCurrency]
             let convert = double! * value
             let stringOutput = String(format: "%.2f", convert)
-            convertedValue.text = stringOutput
+            let symbol = getSymbol(forCurrencyCode: pickedCurrency)
+            convertedValue.text = "\(symbol!) \(stringOutput)"
         } else {
             print("No picked currency to exchange")
         }
-        
     }
     
     @IBAction func dismissView(_ sender: UIButton) {
@@ -104,6 +124,34 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         task.resume()
     }
+    
+    func getSymbol(forCurrencyCode code: String) -> String? {
+        let locale = NSLocale(localeIdentifier: code)
+        if locale.displayName(forKey: .currencySymbol, value: code) == code {
+            let newlocale = NSLocale(localeIdentifier: code.dropLast() + "_en")
+            return newlocale.displayName(forKey: .currencySymbol, value: code)
+        }
+        return locale.displayName(forKey: .currencySymbol, value: code)
+    }
+    
+    func createAlert() {
+        
+        let alert = UIAlertController(title: "Invalid Input", message: "Input value is empty", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
+    }
 
 }
 
+extension ExchangeRateViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let symbol = getSymbol(forCurrencyCode: baseCurrencySymbol!)
+        textField.text?.append("\(symbol!) ")
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+}
