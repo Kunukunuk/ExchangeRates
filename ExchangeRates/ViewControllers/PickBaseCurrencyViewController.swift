@@ -24,10 +24,14 @@ class PickBaseCurrencyViewController: UIViewController {
     
     @IBAction func selectBaseCurrency(_ sender: UIButton) {
         
+        performSegue(withIdentifier: "showExchange", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        if segue.identifier == "showExchange" {
+            let destinationVC = segue.destination as! ExchangeRateViewController
+            destinationVC.baseCurrencySymbol = pickedCurrency
+        }
     }
 
 }

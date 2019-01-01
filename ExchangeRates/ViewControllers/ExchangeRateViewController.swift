@@ -11,13 +11,13 @@ import UIKit
 class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var basePickerView: UIPickerView!
-    
     @IBOutlet weak var baseValue: UITextField!
     @IBOutlet weak var convertedValue: UITextField!
     
     var basePickerLabels = [String]()
     var basePickerData: [String: Double] = [:]
     var pickedCurrency: String = ""
+    var baseCurrencySymbol: String?
     
     
     override func viewDidLoad() {
@@ -65,6 +65,11 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    @IBAction func dismissView(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
     
     func getAPIData() {
         

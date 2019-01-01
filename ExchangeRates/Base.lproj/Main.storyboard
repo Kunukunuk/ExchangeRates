@@ -52,6 +52,7 @@
                     </view>
                     <connections>
                         <outlet property="baseCurrencyPicker" destination="Ra1-tS-CLt" id="ktH-sU-r5h"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showExchange" id="uMc-CR-KHb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Beg-rv-Co5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,6 +94,14 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIa-NQ-0zG">
+                                <rect key="frame" x="10" y="330" width="58" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dismissView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8G-Vm-3ot"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -100,8 +109,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VUb-Gc-RqZ" secondAttribute="trailing" constant="10" id="7ca-Nz-EWV"/>
                             <constraint firstItem="sRG-MU-D6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="J0j-tp-5Lt"/>
                             <constraint firstItem="VUb-Gc-RqZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="NMs-6P-9ak"/>
+                            <constraint firstItem="DIa-NQ-0zG" firstAttribute="top" secondItem="sRG-MU-D6x" secondAttribute="bottom" constant="20" id="NNj-vT-b1D"/>
                             <constraint firstItem="VUb-Gc-RqZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aeW-3e-8xa"/>
                             <constraint firstItem="sRG-MU-D6x" firstAttribute="top" secondItem="VUb-Gc-RqZ" secondAttribute="bottom" constant="10" id="c7a-3V-omB"/>
+                            <constraint firstItem="DIa-NQ-0zG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="mQE-Ed-m52"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -113,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+            <point key="canvasLocation" x="245" y="108"/>
         </scene>
     </scenes>
 </document>
