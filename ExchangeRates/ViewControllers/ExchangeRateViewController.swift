@@ -87,8 +87,11 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
             let rates = dataDictionary["rates"] as! [String: Double]
             
             for (key, value) in rates {
-                print(key)
-            
+                
+                if self.pickedCurrency == "" {
+                    self.pickedCurrency = key
+                    print(self.pickedCurrency)
+                }
                 self.basePickerLabels.append(key)
                 self.basePickerData[key] = value
                 
