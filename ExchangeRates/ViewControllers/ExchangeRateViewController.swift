@@ -62,7 +62,7 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
             let stringOutput = String(format: "%.2f", convert)
             convertedValue.text = stringOutput
         } else {
-            print("bye")
+            print("No picked currency to exchange")
         }
         
     }
@@ -92,7 +92,6 @@ class ExchangeRateViewController: UIViewController, UIPickerViewDelegate, UIPick
                 
                 if self.pickedCurrency == "" {
                     self.pickedCurrency = key
-                    print(self.pickedCurrency)
                 }
                 self.basePickerLabels.append(key)
                 self.basePickerData[key] = value
